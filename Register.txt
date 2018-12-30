@@ -1,0 +1,14 @@
+ public void InsertUser(string Code_melli, string Name, string Family, string  Tel_num, string User_pass)
+        {
+
+            Cmd.CommandText = "Register";
+
+            Cmd.Parameters.Add(new SqlParameter("@Code_melli", Code_melli));
+            Cmd.Parameters.Add(new SqlParameter("@Name", Name));
+            Cmd.Parameters.Add(new SqlParameter("@Family", Family));
+            Cmd.Parameters.Add(new SqlParameter("@Tel_num", Tel_num));
+
+            Conn.Open();
+            Cmd.ExecuteNonQuery();
+            Conn.Close();
+        }
