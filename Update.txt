@@ -1,0 +1,11 @@
+        public void UpdateUser(string Code_melli, string User_pass)
+        {
+            Cmd.CommandText = "P_Update";
+
+            Cmd.Parameters.Add(new SqlParameter("@Code_melli", Code_melli));
+            Cmd.Parameters.Add(new SqlParameter("@User_pass", User_pass));
+
+            Conn.Open();
+            Cmd.ExecuteNonQuery();
+            Conn.Close();
+        }
